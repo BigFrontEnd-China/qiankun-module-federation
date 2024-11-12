@@ -5,15 +5,17 @@
 ```
   packages/
   │
-  ├── main-app/ [主应用]
+  ├── main-app/ [主应用] (remotes module-federation)
   │
-  ├── micro-app-a/ [子应用]
+  ├── micro-app-a/ [子应用] (remotes module-federation)
   │
-  ├── micro-app-b/ [子应用]
+  ├── micro-app-b/ [子应用] (remotes module-federation)
   │
   └── module-federation/ [模块联邦exposes应用]
 ```
+### Reference Relationship
 
+![这是图片](/flow.png)
 ## Project setup
 ```
 pnpm install
