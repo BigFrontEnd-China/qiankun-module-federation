@@ -1,11 +1,18 @@
 <template>
   <div class="home">
-    <h1>micro-app-b-home</h1>
+    <img alt="Vue logo" src="../assets/logo.png" />
+    <div v-if="isLoadingComponent">Loading HelloWorld.vue</div>
+    <HelloWorld msg="Micro App B Use Module Federation！" />
   </div>
 </template>
 
-<script>
-export default {
-  name: "HomeView",
-};
+<script setup>
+import { defineAsyncComponent, ref } from "vue";
+const isLoadingComponent = ref(true);
+
+const HelloWorld = defineAsyncComponent(() =>
+  import("module_federation/HelloWorld").finally(() => {
+    isLoadingComponent.value = false;
+  })
+);
 </script>
