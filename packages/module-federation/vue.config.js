@@ -1,5 +1,7 @@
 const { defineConfig } = require("@vue/cli-service");
-const { ModuleFederationPlugin } = require("webpack").container;
+const {
+  ModuleFederationPlugin,
+} = require("@module-federation/enhanced/webpack");
 const package = require("./package");
 const port = process.env.port || 8083;
 
